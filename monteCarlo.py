@@ -58,8 +58,8 @@ for r in range (n):
 		total+=1/n
 		xVal.append(a)
 		yVal.append(b)
-#plt.plot(xVal,yVal,marker='o',linestyle='')
-#plt.show()
+plt.plot(xVal,yVal,marker='o',linestyle='')
+plt.show()
 print("monte carlo",total)
 print("this code took " ,time.time()-st)
 st=time.time()
