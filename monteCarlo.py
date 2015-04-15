@@ -50,7 +50,7 @@ plt.plot(x,y,'-')
 xVal=[]
 yVal=[]
 total=0
-n=500000
+n=50000
 for r in range (n):
 	a=endPoint*random.random()
 	b=endPoint*random.random()
@@ -58,13 +58,11 @@ for r in range (n):
 		total+=1/n
 		xVal.append(a)
 		yVal.append(b)
-plt.plot(xVal,yVal,marker='x',linestyle='')
+
+print("the monte carlo function result was ", total, " this result took " ,time.time()-st, " seconds")
+st=time.time()
+print("the trapazoid method result was  ",trap(startPoint,endPoint,2000) ," this result took " ,time.time()-st, " seconds")
+st=time.time()
+print("simpsons method produced the result " , integrate(startPoint,endPoint,80)," this result took " ,time.time()-st, " seconds")
+plt.plot(xVal,yVal,marker='o',linestyle='')
 plt.show()
-print("monte carlo",total)
-print("this code took " ,time.time()-st)
-st=time.time()
-print("trap",trap(startPoint,endPoint,2000))
-print("this code took " ,time.time()-st)
-st=time.time()
-print("simpsons",integrate(startPoint,endPoint,80))
-print("this code took " ,time.time()-st)
